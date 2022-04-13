@@ -39,22 +39,25 @@ public class ProjetoPessoaApplication implements CommandLineRunner{
 		Cidade cid1 = new Cidade(null, "Goiânia", est1);
 		
 		est1.getCidades().add(cid1);
-		
+						
 		Endereco end1 = new Endereco(null, "Av T3", "42", "Rua Laranjeiras", 
 				"Bairro Sao francisco", "740000", cid1);
 		
 		cid1.getEnderecos().add(end1);
-		
+						
 		Cliente cli1 = new Cliente(null, "Ricardo", "ricardo@yahoo.com", 
 				"049588230211", TipoCliente.PESSOAFISICA);
 		
-		end1.setCliente(cli1);
 		cli1.getEnderecos().add(end1);
 		
-		cidadeRepo.save(cid1);
+		end1.setCliente(cli1);
+		
 		estadoRepo.save(est1);
-		enderecoRepo.save(end1);
+		cidadeRepo.save(cid1);
+		
 		clienteRepo.save(cli1);
+		enderecoRepo.save(end1);
+		
 		
 		
 		
